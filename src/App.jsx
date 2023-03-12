@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import Carousel from 'react-material-ui-carousel'
 import { Timeline } from 'react-twitter-widgets'
-import { Button, Box, SpeedDial, Stack, SpeedDialAction, CssBaseline, Grid, Container, Card, Chip, CardMedia, CardContent, Typography, Avatar, CardActions } from '@mui/material';
+import { Button, Backdrop, Box, SpeedDial, Stack, SpeedDialAction, CssBaseline, Grid, Container, Card, Chip, CardMedia, CardContent, Typography, Avatar, CardActions, Link } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu'
 import FolderOpenIcon from '@mui/icons-material/FolderOpen';
 import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
@@ -23,6 +23,7 @@ const actions = [
 ];
 
 
+
 const App = () => {
 
   const aboutRef = useRef();
@@ -39,7 +40,16 @@ const App = () => {
       connectRef.current.scrollIntoView();
     }
   }
-
+  
+  const [open, setOpen] = React.useState(false);
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const handleToggle = () => {
+    setOpen(!open);
+  };
+  
+  
   return (
     <>
       <CssBaseline />
@@ -64,7 +74,17 @@ const App = () => {
         <span></span>
       </div>
 
+      <div css={styleSheet.gdBack}>
+        <Backdrop
+          open={open}
+          onClick={handleClose}
+        >
+
+        </Backdrop>
+      </div>
+
       {/* Landing Section */}
+
 
       <div css={styleSheet.landingDiv}>
         <Typography css={styleSheet.name} color="white">
@@ -194,6 +214,8 @@ const App = () => {
 
       {/* Projects Section */}
 
+      {/* backdrop/masonry for graphic design project card expanded */}
+
       <div css={styleSheet.projectsDiv} ref={projectsRef}>
         <Container maxWidth="lg">
           <Divider textAlign="left" css={styleSheet.sectionDivider}>
@@ -231,7 +253,21 @@ const App = () => {
                   </CardContent>
                   <CardActions disableSpacing>
                       <div css={styleSheet.buttonContainer}>
-                        {cardi.moreInfo}
+                          {cardi.buttons.map((button) => (
+                            <Link
+                            href={button.link}
+                            underline="none"
+                            >
+                            <Button
+                              variant={button.variant}
+                              sx={button.sX}
+                              disableElevation 
+                            >
+                              {button.message}
+                            </Button>
+                            </Link>
+                          ))}
+                        {/* {cardi.moreInfo} make this a button here and map the props so onclick can do it's thang */}
                         {cardi.test}
                       </div>
                   </CardActions>

@@ -40,8 +40,19 @@ export const projectCardInfo = [
                 variant: "filled"
             }
         ],
-        test: <Link href="https://www.rossvasquez.me/zSalesforce/zmenu.html" underline="none"><Button variant="outlined" sx={{borderColor: '#282828', color: '#FFFFFF', width: '47%', "&:hover":{borderColor: '#80d8ff', color: '#80d8ff'}}} disableElevation>test</Button></Link>,
-        moreInfo: <Button variant="contained" sx={{backgroundColor: '#282828', width: '47%', margin: '10px', "&:hover":{backgroundColor: '#80d8ff', color: '#404040'}}} disableElevation>expand</Button>
+        buttons: [
+            {
+                variant: "contained",
+                sX: {backgroundColor: '#282828', margin: '10px', width: '47%', "&:hover":{backgroundColor: '#80d8ff', color: '#404040'}},
+                message: "expand"
+            },
+            {
+                link: "https://www.rossvasquez.me/zSalesforce/zmenu.html",
+                variant: "outlined",
+                sX: {borderColor: '#282828', color: '#FFFFFF', width: '47%', "&:hover":{borderColor: '#80d8ff', color: '#80d8ff'}},
+                message: "test"
+            }
+        ]
     },
     {
         key: 'pMrkt',
@@ -60,7 +71,13 @@ export const projectCardInfo = [
                 variant: "filled"
             },
         ],
-        moreInfo: <Button variant="contained" sx={{backgroundColor: '#282828', margin: '10px', width: '96.5%', "&:hover":{backgroundColor: '#80d8ff', color: '#404040'}}} disableElevation>expand</Button>
+        buttons: [
+            {
+                variant: "contained",
+                sX: {backgroundColor: '#282828', margin: '10px', width: '96.5%', "&:hover":{backgroundColor: '#80d8ff', color: '#404040'}},
+                message: "expand"
+            }
+        ]
     },
     {
         key: 'pApp',
@@ -86,7 +103,13 @@ export const projectCardInfo = [
                 variant: "filled"
             },
         ],
-        moreInfo: <Button variant="contained" sx={{backgroundColor: '#282828', margin: '10px', width: '96.5%', "&:hover":{backgroundColor: '#80d8ff', color: '#404040'}}} disableElevation>expand</Button>
+        buttons: [
+            {
+                variant: "contained",
+                sX: {backgroundColor: '#282828', margin: '10px', width: '96.5%', "&:hover":{backgroundColor: '#80d8ff', color: '#404040'}},
+                message: "expand"
+            }
+        ]
     },
     {
         key: 'reactP',
@@ -124,6 +147,12 @@ export const projectCardInfo = [
                 variant: "filled"
             }
         ],
-        moreInfo: <Button variant="contained" sx={{backgroundColor: '#282828', margin: '10px', width: '96.5%', "&:hover":{backgroundColor: '#80d8ff', color: '#404040'}}} disableElevation>expand</Button>
-    },
+        buttons: [
+            {
+                variant: "contained",
+                sX: {backgroundColor: '#282828', margin: '10px', width: '96.5%', "&:hover":{backgroundColor: '#80d8ff', color: '#404040'}},
+                message: "expand"
+            }
+        ]
+    }
 ]
