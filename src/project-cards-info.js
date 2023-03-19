@@ -102,13 +102,6 @@ export const projectCardInfo = [
                 css: css`margin: 5px; background-color: #282828; color: #B3B3B3;`,
                 variant: "filled"
             },
-        ],
-        buttons: [
-            {
-                variant: "contained",
-                sX: {backgroundColor: '#282828', margin: '10px', width: '96.5%', "&:hover":{backgroundColor: '#80d8ff', color: '#404040'}},
-                message: "expand"
-            }
         ]
     },
     {
@@ -145,13 +138,6 @@ export const projectCardInfo = [
                 label: "MUI",
                 css: css`margin: 5px; background-color: #282828; color: #B3B3B3;`,
                 variant: "filled"
-            }
-        ],
-        buttons: [
-            {
-                variant: "contained",
-                sX: {backgroundColor: '#282828', margin: '10px', width: '96.5%', "&:hover":{backgroundColor: '#80d8ff', color: '#404040'}},
-                message: "expand"
             }
         ]
     }
