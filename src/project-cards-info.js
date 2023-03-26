@@ -143,18 +143,18 @@ export const projectCardInfo = [
             {
                 avatar: <Avatar alt="Vanilla JS" src={require('./static/images/chips/javascript.png')}/>,
                 label: "Vanilla JS",
-                css: css`margin: 5px; background-color: #282828; color: #B3B3B3;`,
+                css: css`margin: 5px; margin-right: 10px; background-color: #282828; color: #B3B3B3;`,
                 variant: "filled"
             },
-            {
-                avatar: <Avatar alt="Salesforce" src={require('./static/images/chips/salesforce.png')}/>,
-                label: "Salesforce",
-                css: css`margin: 5px; background-color: #282828; color: #B3B3B3;`,
-                variant: "filled"
-            }
+            // {
+            //     avatar: <Avatar alt="Salesforce" src={require('./static/images/chips/salesforce.png')}/>,
+            //     label: "Salesforce",
+            //     css: css`background-color: #282828; color: #B3B3B3;`,
+            //     variant: "filled"
+            // }
         ],
         buttonDividerCss: css`border-color: #B3B3B3; margin-bottom: 14px; margin-top: 14px;`,
-        africa: [{content: <ZExpand />}]
+        buttonContent: [{content: <ZExpand />}]
     },
     {
         key: 'pMrkt',
@@ -174,7 +174,7 @@ export const projectCardInfo = [
             },
         ],
         buttonDividerCss: css`border-color: #B3B3B3; margin-bottom: 14px; margin-top: 14px;`,
-        africa: [{content: <GdMasonry />}]
+        buttonContent: [{content: <GdMasonry />}]
     },
     {
         key: 'pApp',
@@ -190,13 +190,13 @@ export const projectCardInfo = [
             {
                 avatar: <Avatar alt="Python" src={require('./static/images/chips/python.png')}/>,
                 label: "Python",
-                css: css`margin-right: 5px; background-color: #282828; color: #B3B3B3;`,
+                css: css`margin-right: 5px; margin-top: 5px; background-color: #282828; color: #B3B3B3;`,
                 variant: "filled"
             },
             {
                 avatar: <Avatar alt="Kivy" src={require('./static/images/chips/kivy.png')}/>,
                 label: "Kivy",
-                css: css`margin: 5px; background-color: #282828; color: #B3B3B3;`,
+                css: css`margin-left: 5px; margin-top: 5px; background-color: #282828; color: #B3B3B3;`,
                 variant: "filled"
             }
         ],
@@ -206,35 +206,34 @@ export const projectCardInfo = [
         key: 'reactP',
         name: 'React Portfolio Page',
         description: 'Utilized the MUI component library and Emotion to create a personal portfolio page in ReactJS.',
-        image: 'https://www.computerhardwareinc.com/wp-content/uploads/2019/03/heres-how-to-capture-a-full-screen-screenshot-of-a-web-page.png',
+        image: require('./static/images/projectPlaceholder/reactPortfolio.png'),
         alignment: css`
             height: 220px;
             object-fit: cover;
-            object-position: top;
         `,
         chips: [
             {
                 avatar: <Avatar alt="Javascript" src={require('./static/images/chips/javascript.png')}/>,
                 label: "JavaScript",
-                css: css`margin-right: 5px; background-color: #282828; color: #B3B3B3;`,
+                css: css`margin-top: 5px; margin-right: 5px; background-color: #282828; color: #B3B3B3;`,
                 variant: "filled"
             },
             {
                 avatar: <Avatar alt="JSX" src={require('./static/images/chips/jsx.png')}/>,
                 label: "JSX",
-                css: css`margin: 5px; background-color: #282828; color: #B3B3B3;`,
+                css: css`margin-top: 5px; margin: 5px; background-color: #282828; color: #B3B3B3;`,
                 variant: "filled"
             },
             {
                 avatar: <Avatar alt="React" src={require('./static/images/chips/react.png')}/>,
                 label: "React",
-                css: css`margin: 5px; background-color: #282828; color: #B3B3B3;`,
+                css: css`margin-top: 5px; margin: 5px; margin-right: 10px; background-color: #282828; color: #B3B3B3;`,
                 variant: "filled"
             },
             {
                 avatar: <Avatar alt="MUI" src={require('./static/images/chips/mui.png')}/>,
                 label: "MUI",
-                css: css`margin: 5px; background-color: #282828; color: #B3B3B3;`,
+                css: css`background-color: #282828; color: #B3B3B3;`,
                 variant: "filled"
             }
         ],

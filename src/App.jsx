@@ -204,24 +204,24 @@ const App = () => {
             </Typography>
           </Divider>
           <Grid container spacing={3} css={css`margin-top: 10px;`}>
-            {projectCardInfo.map((cardi) => (
-              <Grid item key={cardi.name} xs={12} sm={12} md={6} lg={6} xl={6}>
-                <Card css={styleSheet.card}>
+            {projectCardInfo.map((card) => (
+                  <Grid item key={card.name} xs={12} sm={12} md={6} lg={6} xl={6}>
+              <Card css={styleSheet.card}>
                   <CardMedia
                     component="img"
-                    image={cardi.image}
-                    css={cardi.alignment}
+                    image={card.image}
+                    css={card.alignment}
                   />
                   <CardContent css={css`flex-grow: 1;`}>
                     <div css={styleSheet.infoContainer}>
                       <Typography gutterBottom variant="h5" color="white">
-                        {cardi.name}
+                        {card.name}
                       </Typography>
                       <Typography gutterBottom css={css`color: #B3B3B3;`}>
-                        {cardi.description}
+                        {card.description}
                       </Typography>
                     </div>
-                    {cardi.chips.map((chip) => (
+                    {card.chips.map((chip) => (
                       <Chip
                         avatar={chip.avatar}
                         label={chip.label}
@@ -229,10 +229,10 @@ const App = () => {
                         variant={chip.variant}
                       />
                     ))}
-                    <Divider css={cardi.buttonDividerCss}/>
+                    <Divider css={card.buttonDividerCss}/>
                   </CardContent>
                   <CardActions disableSpacing>
-                      {cardi.africa?.map((button) => (
+                      {card.buttonContent?.map((button) => (
                         <div css={styleSheet.buttonContainer}>
                           {button.content}
                         </div>

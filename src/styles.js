@@ -197,7 +197,7 @@ export const styleSheet = {
         position: relative;
         transform: translate(0, -50%);
         top: 50%;
-        font-size: clamp(16px, 3vw, 30px);
+        font-size: clamp(18px, 3vw, 30px);
         text-align: center;
         color: #FFFFFF;
         padding: 10px 30px 80px 30px;
@@ -215,6 +215,7 @@ export const styleSheet = {
         border-radius: 5px;
         box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
         margin-top: 35px;
+        height: fit-content;
     `,
 
     sectionHeader: css`
