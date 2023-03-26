@@ -276,6 +276,11 @@ export const styleSheet = {
         background-color: #404040;
         padding: 10px;
         margin-bottom: 35px;
+    `,
+
+    zCard: css`
+        background-color: #404040;
+        height: 98vh;
     `
 
 }

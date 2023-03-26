@@ -1,8 +1,15 @@
 import React from 'react';
+/** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import { Link, Avatar, Button, Backdrop, Container } from '@mui/material'
+import { Link, Avatar, Button, Backdrop, Container, Typography, Card, CardContent, Stack, Divider, ImageList, ImageListItem } from '@mui/material'
 import Masonry from '@mui/lab/Masonry';
 import { styleSheet } from './/styles.js'
+
+const zData = [
+    {img: require('./static/images/zShots/1.png'), css: css`position: relative; width: 32%; float: left; padding-right: 2%;`},
+    {img: require('./static/images/zShots/2.png'), css: css`position: relative; width: 32%; float: left; padding-right: 2%;`},
+    {img: require('./static/images/zShots/3.png'), css: css`position: relative; width: 32%; padding-right: 2%;`},
+]
 
 const myData =[
     {img: require('./static/images/gd/1.jpg')},
@@ -66,7 +73,42 @@ function ZExpand() {
               css={css`color: #fff;`}
               style={{zIndex: '100'}} 
             >   
-                
+            <Container maxWidth='lg'>
+                <Card css={styleSheet.zCard}>
+                    <CardContent>
+                        <Typography variant='h2' css={css`color: white;`}>
+                            Restauraunt Order System
+                        </Typography>
+                        {zData.map((pic) => (
+                            <div css={css`margin-top: 15px; margin-bottom: 15px;`}>
+                                <img src={pic.img} css={pic.css} />
+                            </div>
+                        ))}
+                        <Typography variant='h4' css={css`color: white;`}>
+                            Problem
+                        </Typography>
+                        <Divider css={css`background-color: #b3b3b3; margin-top: 5px; margin-bottom: 5px;`}/>
+                        <Typography variant='h7' css={css`color: #b3b3b3;`}>
+                            Z'Mariks, a restaurant located in the heart of Iowa City averages roughly two and a half catering orders per-day.
+                            Most of these orders come from University of Iowa Athletic, Academic, or Medical offices. The current system in place
+                            involves the customer drafting an e-mail of the order at which point it is hand written on a sheet by the restaurant where
+                            it sits until manually entered into the POS(Point of Sale) on the day of the order. The current methods often require several
+                            conversations by phone and e-mail between the customer and the store to achieve a single order. The various aspects of the current
+                            methods waste time and energy for both parties.
+                        </Typography>
+                        <Typography variant='h4' css={css`color: white; margin-top: 15px;`}>
+                            Solution
+                        </Typography>
+                        <Divider css={css`background-color: #b3b3b3; margin-top: 5px; margin-bottom: 5px;`}/>
+                        <Typography variant='h7' css={css`color: #b3b3b3;`}>
+                            To extend my knowledge of web-development I aimed to create an in-house solution to make the catering process easier for both 
+                            the business and the consumer. Current competition in this market is 'EZ Cater', a commercial version of popular 
+                            consumer delivery and pick-up service (Doordash, GrubHub, UberEats). However, pricing and un-originality make this
+                            undesireable for the restaurant. 
+                        </Typography>
+                    </CardContent>
+                </Card>
+            </Container>
             </Backdrop>
         </>
     )
