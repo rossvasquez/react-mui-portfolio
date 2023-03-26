@@ -41,15 +41,6 @@ const App = () => {
     }
   }
   
-  const [open, setOpen] = React.useState(false);
-  const handleClose = () => {
-    setOpen(false);
-  };
-  const handleToggle = () => {
-    setOpen(!open);
-  };
-  
-  
   return (
     <>
       <CssBaseline />
@@ -72,15 +63,6 @@ const App = () => {
         <span></span>
         <span></span>
         <span></span>
-      </div>
-
-      <div css={styleSheet.gdBack}>
-        <Backdrop
-          open={open}
-          onClick={handleClose}
-        >
-
-        </Backdrop>
       </div>
 
       {/* Landing Section */}
@@ -214,8 +196,6 @@ const App = () => {
 
       {/* Projects Section */}
 
-      {/* backdrop/masonry for graphic design project card expanded */}
-
       <div css={styleSheet.projectsDiv} ref={projectsRef}>
         <Container maxWidth="lg">
           <Divider textAlign="left" css={styleSheet.sectionDivider}>
@@ -249,27 +229,14 @@ const App = () => {
                         variant={chip.variant}
                       />
                     ))}
-                  <Divider css={css`background-color: #B3B3B3; margin-bottom: 14px; margin-top: 14px;`} />
+                    <Divider css={cardi.buttonDividerCss}/>
                   </CardContent>
                   <CardActions disableSpacing>
-                      <div css={styleSheet.buttonContainer}>
-                          {cardi.buttons.map((button) => (
-                            <Link
-                            href={button.link}
-                            underline="none"
-                            >
-                            <Button
-                              variant={button.variant}
-                              sx={button.sX}
-                              disableElevation 
-                            >
-                              {button.message}
-                            </Button>
-                            </Link>
-                          ))}
-                        {/* {cardi.moreInfo} make this a button here and map the props so onclick can do it's thang */}
-                        {cardi.test}
-                      </div>
+                      {cardi.africa?.map((button) => (
+                        <div css={styleSheet.buttonContainer}>
+                          {button.content}
+                        </div>
+                      ))}
                   </CardActions>
                 </Card>
               </Grid>
@@ -320,16 +287,28 @@ const App = () => {
                 <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
                   <div css={css`width: fit-content; position: relative; transform: translate(-50%, -50%); left: 50%; top: 50%; padding-bottom: 20px; padding-top: 20px;`} >
                     <Stack direction="row" spacing={{ xs: 5, sm: 3, md: 8, lg: 12 }} >
-                      <Avatar
-                        alt="GitHub"
-                        src={require("./static/images/chips/github.png")}
-                        sx={{ width: 110, height: 110 }}
-                      />
+                    <Link 
+                        href="https://github.com/rossvasquez" 
+                        target="_blank" 
+                        underline="none"
+                    > 
+                        <Avatar
+                          alt="GitHub"
+                          src={require("./static/images/chips/github.png")}
+                          sx={{ width: 110, height: 110 }}
+                        />
+                    </Link>
+                    <Link 
+                        href="https://www.linkedin.com/in/ross-vasquez" 
+                        target="_blank" 
+                        underline="none"
+                    > 
                       <Avatar
                         alt="LinkedIn"
                         src={require("./static/images/chips/linkedin.png")}
                         sx={{ width: 110, height: 110 }}
                       />
+                    </Link>
                     </Stack>
                   </div>
                 </Grid>

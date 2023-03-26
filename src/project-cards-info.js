@@ -1,6 +1,119 @@
+import React from 'react';
 import { css } from '@emotion/react'
-import { Link, Avatar, Button } from '@mui/material'
+import { Link, Avatar, Button, Backdrop, Container } from '@mui/material'
+import Masonry from '@mui/lab/Masonry';
 import { styleSheet } from './/styles.js'
+
+const myData =[
+    {img: require('./static/images/gd/1.jpg')},
+    {img: require('./static/images/gd/2.jpg')},
+    {img: require('./static/images/gd/3.png')},
+    {img: require('./static/images/gd/4.jpg')},
+    {img: require('./static/images/gd/5.jpg')},
+    {img: require('./static/images/gd/6.jpg')},
+    {img: require('./static/images/gd/7.jpg')},
+    {img: require('./static/images/gd/8.jpg')},
+    {img: require('./static/images/gd/9.jpg')},
+    {img: require('./static/images/gd/10.jpg')},
+    {img: require('./static/images/gd/11.jpg')},
+    {img: require('./static/images/gd/12.jpg')},
+    {img: require('./static/images/gd/13.jpg')},
+    {img: require('./static/images/gd/14.jpg')},
+    {img: require('./static/images/gd/15.jpg')},
+    {img: require('./static/images/gd/16.jpg')},
+    {img: require('./static/images/gd/17.jpg')},
+    {img: require('./static/images/gd/18.jpg')},
+]
+
+function ZExpand() {
+
+    const [open, setOpen] = React.useState(false);
+    const handleClose = () => {
+        setOpen(false);
+        document.body.style.overflow = 'unset';
+    };
+    const handleToggle = () => {
+        setOpen(!open);
+        document.body.style.overflow = 'hidden';
+    };
+
+    return (
+        <>
+            <Button
+                variant="contained"
+                sx= {{backgroundColor: '#282828', margin: '10px', width: '47%', "&:hover":{backgroundColor: '#80d8ff', color: '#404040'}}}
+                onClick={handleToggle}
+                disableElevation 
+            >
+            Expand
+            </Button>
+            <Link 
+                href="https://www.rossvasquez.me/zSalesforce/zmenu.html" 
+                target="_blank" 
+                underline="none"
+            >
+                <Button
+                variant="outlined"
+                sx={{borderColor: '#282828', color: '#FFFFFF', width: '47%', "&:hover":{borderColor: '#80d8ff', color: '#80d8ff'}}}
+                >
+                Test
+                </Button>
+            </Link>
+
+            <Backdrop
+              open={open}
+              onClick={handleClose}
+              css={css`color: #fff;`}
+              style={{zIndex: '100'}} 
+            >   
+                
+            </Backdrop>
+        </>
+    )
+}
+
+function GdMasonry() {
+    const [open, setOpen] = React.useState(false);
+    const handleClose = () => {
+        setOpen(false);
+        document.body.style.overflow = 'unset';
+    };
+    const handleToggle = () => {
+        setOpen(!open);
+        document.body.style.overflow = 'hidden';
+    };
+
+    return (
+        <>
+            <Button
+                variant="contained"
+                sx= {{backgroundColor: '#282828', margin: '10px', width: '96.5%', "&:hover":{backgroundColor: '#80d8ff', color: '#404040'}}}
+                onClick={handleToggle}
+                disableElevation 
+            >
+            Expand
+            </Button>
+
+            <Backdrop
+              open={open}
+              onClick={handleClose}
+              slotProps={{style:{opacity: 2}}}
+              style={{zIndex: '100'}} 
+            >   
+                <Container maxWidth='lg' style={{position: 'absolute', top: '8px', height: '100vh', overflow: 'auto', paddingLeft: 'clamp(0px, 5vw, 35px)', paddingTop: 'clamp(0px, 2vw, 20px)'}}>
+                <Masonry columns={{ xs: 2, sm: 3, md: 3, lg: 3, xl: 3 }} spacing={1}>
+                    {myData.map((item) => (
+                        <img
+                            src={item.img}
+                            loading="lazy"
+                        />
+                    ))}
+                </Masonry>
+                </Container>
+            </Backdrop>
+        </>
+    )
+}
 
 export const projectCardInfo = [
     {
@@ -40,19 +153,8 @@ export const projectCardInfo = [
                 variant: "filled"
             }
         ],
-        buttons: [
-            {
-                variant: "contained",
-                sX: {backgroundColor: '#282828', margin: '10px', width: '47%', "&:hover":{backgroundColor: '#80d8ff', color: '#404040'}},
-                message: "expand"
-            },
-            {
-                link: "https://www.rossvasquez.me/zSalesforce/zmenu.html",
-                variant: "outlined",
-                sX: {borderColor: '#282828', color: '#FFFFFF', width: '47%', "&:hover":{borderColor: '#80d8ff', color: '#80d8ff'}},
-                message: "test"
-            }
-        ]
+        buttonDividerCss: css`border-color: #B3B3B3; margin-bottom: 14px; margin-top: 14px;`,
+        africa: [{content: <ZExpand />}]
     },
     {
         key: 'pMrkt',
@@ -68,16 +170,11 @@ export const projectCardInfo = [
                 avatar: <Avatar alt="Photoshop" src={require('./static/images/chips/photoshop.png')}/>,
                 label: "Adobe Photoshop",
                 css: css`margin-right: 5px; margin-top: 5px; margin-bottom: 5px; background-color: #282828; color: #B3B3B3;`,
-                variant: "filled"
+                variant: "filled",
             },
         ],
-        buttons: [
-            {
-                variant: "contained",
-                sX: {backgroundColor: '#282828', margin: '10px', width: '96.5%', "&:hover":{backgroundColor: '#80d8ff', color: '#404040'}},
-                message: "expand"
-            }
-        ]
+        buttonDividerCss: css`border-color: #B3B3B3; margin-bottom: 14px; margin-top: 14px;`,
+        africa: [{content: <GdMasonry />}]
     },
     {
         key: 'pApp',
@@ -101,8 +198,9 @@ export const projectCardInfo = [
                 label: "Kivy",
                 css: css`margin: 5px; background-color: #282828; color: #B3B3B3;`,
                 variant: "filled"
-            },
-        ]
+            }
+        ],
+        buttonDividerCss: css`opacity: 0; margin-bottom: 0px; margin-top: 0px;`,
     },
     {
         key: 'reactP',
@@ -139,6 +237,7 @@ export const projectCardInfo = [
                 css: css`margin: 5px; background-color: #282828; color: #B3B3B3;`,
                 variant: "filled"
             }
-        ]
+        ],
+        buttonDividerCss: css`opacity: 0; margin-bottom: 0px; margin-top: 0px;`,
     }
 ]
