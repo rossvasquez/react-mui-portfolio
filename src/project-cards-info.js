@@ -6,9 +6,9 @@ import Masonry from '@mui/lab/Masonry';
 import { styleSheet } from './/styles.js'
 
 const zData = [
-    {img: require('./static/images/zShots/1.png'), css: css`position: relative; width: 32%; float: left; padding-right: 2%;`},
-    {img: require('./static/images/zShots/2.png'), css: css`position: relative; width: 32%; float: left; padding-right: 2%;`},
-    {img: require('./static/images/zShots/3.png'), css: css`position: relative; width: 32%; padding-right: 2%;`},
+    {img: require('./static/images/zShots/1.png'), css: css`margin-top: 15px; margin-bottom: 15px; position: relative; width: 33%; float: left; padding-right: 2%; `},
+    {img: require('./static/images/zShots/2.png'), css: css`margin-top: 15px; margin-bottom: 15px; position: relative; width: 33%; float: left; padding-right: 2%;`},
+    {img: require('./static/images/zShots/3.png'), css: css`margin-top: 15px; margin-bottom: 15px; position: relative; width: 33%; float: left; padding-right: 2%;`},
 ]
 
 const myData =[
@@ -80,14 +80,14 @@ function ZExpand() {
                             Restauraunt Order System
                         </Typography>
                         {zData.map((pic) => (
-                            <div css={css`margin-top: 15px; margin-bottom: 15px;`}>
-                                <img src={pic.img} css={pic.css} />
+                            <div css={pic.css}>
+                                <img src={pic.img} css={css`width: 100%;`}/>
                             </div>
                         ))}
                         <Typography variant='h4' css={css`color: white;`}>
                             Problem
                         </Typography>
-                        <Divider css={css`background-color: #b3b3b3; margin-top: 5px; margin-bottom: 5px;`}/>
+                        <Divider css={css`background-color: #b3b3b3; margin-bottom: 5px;`}/>
                         <Typography variant='h7' css={css`color: #b3b3b3;`}>
                             Z'Mariks, a restaurant located in the heart of Iowa City averages roughly two and a half catering orders per-day.
                             Most of these orders come from University of Iowa Athletic, Academic, or Medical offices. The current system in place
@@ -99,12 +99,25 @@ function ZExpand() {
                         <Typography variant='h4' css={css`color: white; margin-top: 15px;`}>
                             Solution
                         </Typography>
-                        <Divider css={css`background-color: #b3b3b3; margin-top: 5px; margin-bottom: 5px;`}/>
+                        <Divider css={css`background-color: #b3b3b3; margin-bottom: 5px;`}/>
                         <Typography variant='h7' css={css`color: #b3b3b3;`}>
                             To extend my knowledge of web-development I aimed to create an in-house solution to make the catering process easier for both 
-                            the business and the consumer. Current competition in this market is 'EZ Cater', a commercial version of popular 
-                            consumer delivery and pick-up service (Doordash, GrubHub, UberEats). However, pricing and un-originality make this
-                            undesireable for the restaurant. 
+                            the business and the consumer. 
+                            
+                            Current competition in this market is 'EZ Cater', a commercial version of popular 
+                            consumer delivery and pick-up services i.e. Doordash, GrubHub, or UberEats. However, pricing and un-originality make this
+                            undesireable for the restaurant.
+
+                            Using the simple yet powerful capabilities of hard coded HTML/CSS/Javascript a front-end solution was achieved.
+                            The current version utilizes localStorage to track user data across the multi-page e-commerce style site. 
+                            Without knowledge of libraries at the time of my learning, everything is hard-coded sans a mapquest api used by the delivery feature 
+                            that assists with location gathering and data consistency. It has been tested and altered various times in
+                            relation to user experience. It is still in development and the goal is to bring it to a stable version
+                            with a working back-end.
+
+                            When I intitially implored web-development as an extension of Salesforce, I imagined Salesforce API and using orgs to store data as a
+                            proper back-end. Now with gain of knowledge I recognize concerns on fronts of security and implementation through this method.
+                            The focus is now on python with a MongoDB database and cron jobs to send data to POS through Toast API.
                         </Typography>
                     </CardContent>
                 </Card>

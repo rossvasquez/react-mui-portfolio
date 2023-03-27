@@ -285,31 +285,35 @@ const App = () => {
                   <Divider orientation='vertical' css={styleSheet.connectDivider} />
                 </Grid>
                 <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
-                  <div css={css`width: fit-content; position: relative; transform: translate(-50%, -50%); left: 50%; top: 50%; padding-bottom: 20px; padding-top: 20px;`} >
-                    <Stack direction="row" spacing={{ xs: 5, sm: 3, md: 8, lg: 12 }} >
+                  <div css={css`width: 100%: height: 100%;`} >
                     <Link 
                         href="https://github.com/rossvasquez" 
                         target="_blank" 
                         underline="none"
                     > 
+                    <div css={css`width: 100%; height: 50%; background-color: white; border-top-left-radius: 3px; border-top-right-radius: 3px;`}>
                         <Avatar
                           alt="GitHub"
                           src={require("./static/images/chips/github.png")}
                           sx={{ width: 110, height: 110 }}
+                          css={css`transform: translate(-50%, 0); left: 50%;`}
                         />
+                    </div>
                     </Link>
                     <Link 
                         href="https://www.linkedin.com/in/ross-vasquez" 
                         target="_blank" 
                         underline="none"
-                    > 
+                    >
+                    <div css={css`width: 100%; height: 50%; background-color: #007bb5; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px;`}>
                       <Avatar
                         alt="LinkedIn"
                         src={require("./static/images/chips/linkedin.png")}
                         sx={{ width: 110, height: 110 }}
+                        css={css`transform: translate(-50%, 0); left: 50%;`}
                       />
+                    </div> 
                     </Link>
-                    </Stack>
                   </div>
                 </Grid>
               </Grid>

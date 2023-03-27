@@ -281,6 +281,27 @@ export const styleSheet = {
     zCard: css`
         background-color: #404040;
         height: 98vh;
+        overflow: auto;
+    `,
+
+    gitTriangle: css`
+        background-color: #003BDE;
+	    clip-path: polygon(0 0, 50% 0, 0 100%);
+	    width: 200%;
+	    height: 100%;
+        position: inherit;
+        left: 0%;
+    }
+    `,
+
+    linkedTriangle: css`
+        background-color: red;
+	    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+	    width: 200%;
+	    height: 100%;
+        position: absolute;
+    }
     `
 
 }
+
