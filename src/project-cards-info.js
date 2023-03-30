@@ -4,6 +4,7 @@ import { css } from '@emotion/react'
 import { Link, Avatar, Button, Backdrop, Container, Typography, Card, CardContent, Stack, Divider, ImageList, ImageListItem } from '@mui/material'
 import Masonry from '@mui/lab/Masonry';
 import { styleSheet } from './/styles.js'
+import Carousel from 'react-material-ui-carousel'
 
 const zData = [
     {img: require('./static/images/zShots/1.png'), css: css`margin-top: 15px; margin-bottom: 15px; position: relative; width: 33%; float: left; padding-right: 2%; `},
@@ -76,48 +77,55 @@ function ZExpand() {
             <Container maxWidth='lg'>
                 <Card css={styleSheet.zCard}>
                     <CardContent>
-                        <Typography variant='h2' css={css`color: white;`}>
+                        <Typography variant='h2' css={css`color: white; font-weight: 300; margin-bottom: 25px;`}>
                             Restauraunt Order System
                         </Typography>
-                        {zData.map((pic) => (
-                            <div css={pic.css}>
-                                <img src={pic.img} css={css`width: 100%;`}/>
-                            </div>
-                        ))}
-                        <Typography variant='h4' css={css`color: white;`}>
+                        <Typography variant='h5' css={css`color: white;`}>
                             Problem
                         </Typography>
-                        <Divider css={css`background-color: #b3b3b3; margin-bottom: 5px;`}/>
-                        <Typography variant='h7' css={css`color: #b3b3b3;`}>
-                            Z'Mariks, a restaurant located in the heart of Iowa City averages roughly two and a half catering orders per-day.
-                            Most of these orders come from University of Iowa Athletic, Academic, or Medical offices. The current system in place
-                            involves the customer drafting an e-mail of the order at which point it is hand written on a sheet by the restaurant where
-                            it sits until manually entered into the POS(Point of Sale) on the day of the order. The current methods often require several
+                        <Divider css={css`background-color: #b3b3b3; margin-bottom: 5px; `}/>
+                        <Typography variant='h7' css={css`color: #b3b3b3; font-size: 18px;d`}>
+                            Z'Mariks, a fast-casual restaurant located in the heart of Iowa City averages roughly two and a half catering orders per-day.
+                            Most of these orders come from University of Iowa Athletic, Academic, or Medical offices. 
+                            
+                            The current system in place for receiving catering orders consists of:<br/><br/>
+                            1. Customer calls the restaurant after being instructed to do so on Z'Mariks website.<br/>
+                            2. Manager recieves call and instructs customer to send email with catering information.<br/>
+                            3. Customer sends email with order information.<br/>
+                            4. Manager hand-writes order information onto Catering Form.<br/>
+                            5. Manager enters catering information into Point of Sale System on the day of the order.<br/><br/>
+
+                            The current methods often require several
                             conversations by phone and e-mail between the customer and the store to achieve a single order. The various aspects of the current
                             methods waste time and energy for both parties.
                         </Typography>
-                        <Typography variant='h4' css={css`color: white; margin-top: 15px;`}>
+                        <Typography variant='h5' css={css`color: white; margin-top: 20px;`}>
                             Solution
                         </Typography>
-                        <Divider css={css`background-color: #b3b3b3; margin-bottom: 5px;`}/>
-                        <Typography variant='h7' css={css`color: #b3b3b3;`}>
+                        <Divider css={css`background-color: #b3b3b3; margin-bottom: 5px; `}/>
+                        <Typography variant='h7' css={css`color: #b3b3b3; font-size: 18px;`}>
                             To extend my knowledge of web-development I aimed to create an in-house solution to make the catering process easier for both 
-                            the business and the consumer. 
+                            the business and the consumer. <br/><br/>
                             
                             Current competition in this market is 'EZ Cater', a commercial version of popular 
                             consumer delivery and pick-up services i.e. Doordash, GrubHub, or UberEats. However, pricing and un-originality make this
-                            undesireable for the restaurant.
+                            undesireable for the restaurant.  <br/><br/>
 
                             Using the simple yet powerful capabilities of hard coded HTML/CSS/Javascript a front-end solution was achieved.
                             The current version utilizes localStorage to track user data across the multi-page e-commerce style site. 
-                            Without knowledge of libraries at the time of my learning, everything is hard-coded sans a mapquest api used by the delivery feature 
-                            that assists with location gathering and data consistency. It has been tested and altered various times in
+                            Without knowledge of libraries at the time of my learning, everything is hard-coded sans a Mapquest API used by the delivery feature,
+                            assisting with location gathering and data consistency. It has been tested and altered various times in
                             relation to user experience. It is still in development and the goal is to bring it to a stable version
-                            with a working back-end.
+                            with a working back-end.  <br/><br/>
 
                             When I intitially implored web-development as an extension of Salesforce, I imagined Salesforce API and using orgs to store data as a
-                            proper back-end. Now with gain of knowledge I recognize concerns on fronts of security and implementation through this method.
-                            The focus is now on python with a MongoDB database and cron jobs to send data to POS through Toast API.
+                            proper back-end. Now with gain of knowledge, I recognize concerns on fronts of security and implementation through this method.
+                            The focus is now on solutions that utilize Node.JS to communicate with MySQL. <br/><br/>
+
+                            Also important with this project was the incorporation of design elements consistent with the current web site for Z'Mariks.
+                            Currently, users are given a button on the main restaurant site for catering orders, that button pulls
+                            up a PDF Menu with instructions on contacting the store. Instead, the button will serve the user my created front-end.
+                            This meant my project needed to resemble certain color and design schema from the original site <a target="_blank" css={css`color: #b3b3b3;`} href='https://www.zmariks.com'>zmariks.com</a>.
                         </Typography>
                     </CardContent>
                 </Card>
@@ -155,7 +163,7 @@ function GdMasonry() {
               slotProps={{style:{opacity: 2}}}
               style={{zIndex: '100'}} 
             >   
-                <Container maxWidth='lg' style={{position: 'absolute', top: '8px', height: '100vh', overflow: 'auto', paddingLeft: 'clamp(0px, 5vw, 35px)', paddingTop: 'clamp(0px, 2vw, 20px)'}}>
+                <Container maxWidth='lg' style={{position: 'absolute', height: '100vh', overflow: 'auto', paddingLeft: 'clamp(0px, 5vw, 35px)', paddingTop: 'clamp(0px, 2vw, 20px)'}}>
                 <Masonry columns={{ xs: 2, sm: 3, md: 3, lg: 3, xl: 3 }} spacing={1}>
                     {myData.map((item) => (
                         <img
@@ -174,7 +182,7 @@ export const projectCardInfo = [
     {
         key: 'zApp',
         name: 'Restauraunt Order System',
-        description: 'Created a production web-app to solve in-house restaurant catering order solution.',
+        description: 'Web-App that solves issues with the restaurants current Catering Order System',
         image: require('./static/images/projectPlaceholder/zApp.png'),
         alignment: css`
             height: 220px;
@@ -186,7 +194,7 @@ export const projectCardInfo = [
             {
                 avatar: <Avatar alt="HTML" src={require('./static/images/chips/html.png')}/>,
                 label: "HTML",
-                css: css`margin-right: 5px; background-color: #282828; color: #B3B3B3;`,
+                css: css`margin-left: 5px; margin-right: 5px; background-color: #282828; color: #B3B3B3;`,
                 variant: "filled"
             },
             {
@@ -214,7 +222,7 @@ export const projectCardInfo = [
     {
         key: 'pMrkt',
         name: "Print Marketing",
-        description: 'Various graphic design projects created for both personal and professional use.',
+        description: 'Various graphic design assets created for professional use in the realty market.',
         image: require('./static/images/projectPlaceholder/printMarketing.png'),
         alignment: css`
             height: 220px;
@@ -260,7 +268,7 @@ export const projectCardInfo = [
     {
         key: 'reactP',
         name: 'React Portfolio Page',
-        description: 'Utilized the MUI component library and Emotion to create a personal portfolio page in ReactJS.',
+        description: 'Utilized the MUI component library to create a personal portfolio page in ReactJS.',
         image: require('./static/images/projectPlaceholder/reactPortfolio.png'),
         alignment: css`
             height: 220px;
@@ -270,7 +278,7 @@ export const projectCardInfo = [
             {
                 avatar: <Avatar alt="Javascript" src={require('./static/images/chips/javascript.png')}/>,
                 label: "JavaScript",
-                css: css`margin-top: 5px; margin-right: 5px; background-color: #282828; color: #B3B3B3;`,
+                css: css`margin-right: 5px; background-color: #282828; color: #B3B3B3;`,
                 variant: "filled"
             },
             {
@@ -282,13 +290,13 @@ export const projectCardInfo = [
             {
                 avatar: <Avatar alt="React" src={require('./static/images/chips/react.png')}/>,
                 label: "React",
-                css: css`margin-top: 5px; margin: 5px; margin-right: 10px; background-color: #282828; color: #B3B3B3;`,
+                css: css`margin-left: 5px; margin-right: 5px; background-color: #282828; color: #B3B3B3;`,
                 variant: "filled"
             },
             {
                 avatar: <Avatar alt="MUI" src={require('./static/images/chips/mui.png')}/>,
                 label: "MUI",
-                css: css`background-color: #282828; color: #B3B3B3;`,
+                css: css`margin: 5px; background-color: #282828; color: #B3B3B3;`,
                 variant: "filled"
             }
         ],

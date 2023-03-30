@@ -22,6 +22,34 @@ const actions = [
   { icon: <ConnectWithoutContactIcon css={css`color: #404040;`} />, name: 'Connect', onClick: 3 }
 ];
 
+function Resume() {
+  const [open, setOpen] = React.useState(false);
+  const handleClose = () => {
+      setOpen(false);
+      document.body.style.overflow = 'unset';
+  };
+  const handleToggle = () => {
+      setOpen(!open);
+      document.body.style.overflow = 'hidden';
+  };
+
+  return (
+      <>
+          <FileOpenIcon css={css`color: #B3B3B3; float: left; font-size: 60px; margin-left: 17px; margin-right: 20px;`} onClick={handleToggle} />
+
+          <Backdrop
+            open={open}
+            onClick={handleClose}
+            style={{zIndex: '100'}}
+          >   
+              <Container maxWidth='lg' style={{position: 'absolute', height: '100vh', overflow: 'auto', paddingLeft: 'clamp(0px, 5vw, 35px)', paddingTop: 'clamp(0px, 2vw, 20px)'}}>
+                <img href="./static/images/resume.png"></img>
+              </Container>
+          </Backdrop>
+      </>
+  )
+}
+
 
 
 const App = () => {
@@ -33,11 +61,11 @@ const App = () => {
   const scrollTo = (id) => {
     console.log("iter");
     if (id === 1) {
-      aboutRef.current.scrollIntoView();
+      setTimeout(aboutRef.current.scrollIntoView(), 100);
     } else if (id === 2) {
-      projectsRef.current.scrollIntoView();
+      setTimeout(projectsRef.current.scrollIntoView(), 100);
     } else if (id === 3) {
-      connectRef.current.scrollIntoView();
+      setTimeout(connectRef.current.scrollIntoView(), 100);
     }
   }
   
@@ -161,17 +189,17 @@ const App = () => {
                 my life-long knowledge of the internet to <span css={styleSheet.aboutEmphasis}>fulfill my curiosity</span>.
               </Typography>
               <Typography css={styleSheet.about} variant="subtitle1" color="white">
-                In the Spring of 2022 I used the Kivy framework (Python) to
+                In the Spring of 2022, I used the Kivy framework (Python) to
                 create a semblance of an application, an accomplishment that made
                 me realize the <span css={styleSheet.aboutEmphasis}>power to create</span>. Over the summer of 2022 I pondered coding
-                bootcamps. I was concerned in commiting
+                bootcamps. I was concerned in committing
                 to something that may not end up holding credibility.
               </Typography>
               <Typography css={styleSheet.about} variant="subtitle1" color="white">
                 I pivoted and discovered
                 Salesforce certifications, becomming a <span css={styleSheet.aboutEmphasis}>Certified Salesforce Administrator</span> in December of 2022.
                 The ability to create Salesforce Orgs and configure various pieces of the
-                software was extremly interesting to me.
+                software was extremely interesting to me.
               </Typography>
               <Typography css={styleSheet.about} variant="subtitle1" color="white">
                 A conversation with a senior web-developer in November of 2022
@@ -185,8 +213,8 @@ const App = () => {
                 and found one at my place of work.
               </Typography>
               <Typography css={styleSheet.about} variant="subtitle1" color="white">
-                This resulted in me building a full fledged web-app
-                in <span css={styleSheet.aboutEmphasis}>Vanilla JS</span> that allows customers to place catering orders on an in-house platform. From there it was clear I needed to learn a JS framework.
+                This resulted in me building a web-app
+                in <span css={styleSheet.aboutEmphasis}>Vanilla JS</span> that would allow customers to place catering orders on an in-house platform. From there it was clear I needed to learn a JS framework.
                 I began learning <span css={styleSheet.aboutEmphasis}>React</span> and utilized <span css={styleSheet.aboutEmphasis}>MUI</span> to create this portfolio page.
               </Typography>
             </Carousel>
@@ -257,34 +285,34 @@ const App = () => {
           <Card css={styleSheet.card1}>
             <CardContent>
               <Grid container spacing={3}>
-                <Grid item xs={12} sm={6} md={5} lg={5} xl={5} >
-                  <div css={css`width: fit-content; position: relative; transform: translate(-50%, -50%); left: 50%; top: 50%; padding-top: 20px; padding-bottom: 20px;`}>
-                    <Stack spacing={3} >
-                      <div>
-                        <ContactPhoneIcon css={css`color: #B3B3B3; float: left; font-size: 40px;`} />
-                        <Typography css={css`color: #FFFFFF; margin-left: 55px; margin-top: 7.5px;`}>
+                <Grid item xs={12} sm={12} md={5} lg={5} xl={5} >
+                  <div css={css`width: 100%; position: relative; transform: translate(-50%, -50%); left: 50%; top: 50%;`}>
+                    <Stack spacing={1} >
+                      <div css={css`transform: translate(0, -10px);`}>
+                        <ContactPhoneIcon css={css`color: #B3B3B3; float: left; font-size: 60px; margin-left: 17px; margin-right: 16px; margin-top: 10px;`} />
+                        <Typography css={css`color: #FFFFFF; margin-top: 26px; font-family: sans-serif; font-size: 16px;`}>
                           +1 (515) 707 6811
                         </Typography>
                       </div>
                       <div>
-                        <ContactMailIcon css={css`color: #B3B3B3; float: left; font-size: 40px;`} />
-                        <Typography css={css`color: #FFFFFF; margin-left: 55px; margin-top: 7.5px;`}>
-                          ross.vasquez.17@gmail.com
+                        <ContactMailIcon css={css`color: #B3B3B3; float: left; font-size: 60px; margin-left: 17px; margin-right: 16px;`} />
+                        <Typography css={css`color: #FFFFFF; margin-top: 16px; font-family: sans-serif; font-size: 16px;`}>
+                          thomasross.vasquez@gmail.com
                         </Typography>
                       </div>
-                      <div>
-                        <FileOpenIcon css={css`color: #B3B3B3; float: left; font-size: 40px;`} />
-                        <Typography css={css`color: #FFFFFF; margin-left: 55px; margin-top: 7.5px;`}>
+                      {/* <div css={css`transform: translate(0, 10px); max-width: none; max-height: none;`}>
+                        <Resume/>
+                        <Typography css={css`color: #FFFFFF; margin-top: 16px; font-family: sans-serif; font-size: 20px;`}>
                           Resume
                         </Typography>
-                      </div>
+                      </div> */}
                     </Stack>
                   </div>
                 </Grid>
                 <Grid item md={1} lg={1} xl={1} sx={{ display: { sm: 'none', md: 'block' } }}>
                   <Divider orientation='vertical' css={styleSheet.connectDivider} />
                 </Grid>
-                <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
+                <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
                   <div css={css`width: 100%: height: 100%;`} >
                     <Link 
                         href="https://github.com/rossvasquez" 
