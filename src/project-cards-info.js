@@ -111,16 +111,15 @@ function ZExpand() {
                             consumer delivery and pick-up services i.e. Doordash, GrubHub, or UberEats. However, pricing and un-originality make this
                             undesireable for the restaurant.  <br/><br/>
 
-                            Using the simple yet powerful capabilities of hard coded HTML/CSS/Javascript a front-end solution was achieved.
+                            Using the simple yet powerful capabilities HTML/CSS/Javascript a front-end solution was achieved.
                             The current version utilizes localStorage to track user data across the multi-page e-commerce style site. 
                             Without knowledge of libraries at the time of my learning, everything is hard-coded sans a Mapquest API used by the delivery feature,
                             assisting with location gathering and data consistency. It has been tested and altered various times in
-                            relation to user experience. It is still in development and the goal is to bring it to a stable version
-                            with a working back-end.  <br/><br/>
+                            relation to user experience. It is still in development and the goal is to bring it to production by the end of May 2023.  <br/><br/>
 
                             When I intitially implored web-development as an extension of Salesforce, I imagined Salesforce API and using orgs to store data as a
                             proper back-end. Now with gain of knowledge, I recognize concerns on fronts of security and implementation through this method.
-                            The focus is now on solutions that utilize Node.JS to communicate with MySQL. <br/><br/>
+                            The focus is now on using Firebases powerful NoSQL Realtime-Database complimented with the ability to implement Node.JS into the project as a Google Cloud Function. <br/><br/>
 
                             Also important with this project was the incorporation of design elements consistent with the current web site for Z'Mariks.
                             Currently, users are given a button on the main restaurant site for catering orders, that button pulls
@@ -205,16 +204,28 @@ export const projectCardInfo = [
             },
             {
                 avatar: <Avatar alt="Vanilla JS" src={require('./static/images/chips/javascript.png')}/>,
-                label: "Vanilla JS",
+                label: "JavaScript",
                 css: css`margin: 5px; margin-right: 10px; background-color: #282828; color: #B3B3B3;`,
                 variant: "filled"
             },
-            // {
-            //     avatar: <Avatar alt="Salesforce" src={require('./static/images/chips/salesforce.png')}/>,
-            //     label: "Salesforce",
-            //     css: css`background-color: #282828; color: #B3B3B3;`,
-            //     variant: "filled"
-            // }
+            {
+                avatar: <Avatar alt="Firebase" src={require('./static/images/chips/firebase.png')}/>,
+                label: "Firebase",
+                css: css`margin: 5px; margin-right: 10px; background-color: #282828; color: #B3B3B3;`,
+                variant: "filled"
+            },
+            {
+                avatar: <Avatar alt="Node.JS" src={require('./static/images/chips/node.png')}/>,
+                label: "Node.JS",
+                css: css`margin: 5px; margin-right: 10px; background-color: #282828; color: #B3B3B3;`,
+                variant: "filled"
+            },
+            {
+                avatar: <Avatar alt="Firebase" src={require('./static/images/chips/db.png')}/>,
+                label: "NoSQL",
+                css: css`margin: 5px; margin-right: 10px; background-color: #282828; color: #B3B3B3;`,
+                variant: "filled"
+            }
         ],
         buttonDividerCss: css`border-color: #B3B3B3; margin-bottom: 14px; margin-top: 14px;`,
         buttonContent: [{content: <ZExpand />}]
@@ -236,7 +247,7 @@ export const projectCardInfo = [
                 variant: "filled",
             },
         ],
-        buttonDividerCss: css`border-color: #B3B3B3; margin-bottom: 14px; margin-top: 14px;`,
+        buttonDividerCss: css`border-color: #B3B3B3; margin-bottom: 14px; margin-top: 55px;`,
         buttonContent: [{content: <GdMasonry />}]
     },
     {
